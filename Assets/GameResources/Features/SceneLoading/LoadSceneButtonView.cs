@@ -6,7 +6,7 @@ namespace UnitSkills.Features.SceneLoading
     /// <summary>
     /// Кнопка зугрузки целевой сцены
     /// </summary>
-    public class LoadButtonView : AbstractButton
+    public class LoadSceneButtonView : AbstractButton
     {
         [SerializeField] protected string targetScene = default;
 

@@ -30,11 +30,6 @@ namespace Unitskills.Features.Facade
         public IReadOnlyList<DataModuleFacade> DataModules => dataModuleFacades;
 
         /// <summary>
-        /// Идентификатор фасада
-        /// </summary>
-        public string Id => id;
-
-        /// <summary>
         /// Получить модуль по типу
         /// </summary>
         /// <typeparam name="T">Тип модуля</typeparam>
@@ -82,7 +77,6 @@ namespace Unitskills.Features.Facade
             return module;
         }
 
-        [SerializeField] protected string id = string.Empty;
         [SerializeField] protected List<ModuleFacade> modules = new List<ModuleFacade>();
         [SerializeField] protected List<DataModuleFacade> dataModuleFacades = new List<DataModuleFacade>();
 

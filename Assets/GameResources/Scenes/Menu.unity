@@ -211,9 +211,9 @@ GameObject:
   - component: {fileID: 327008208}
   - component: {fileID: 327008207}
   - component: {fileID: 327008210}
-  - component: {fileID: 327008206}
+  - component: {fileID: 327008211}
   m_Layer: 5
-  m_Name: LoadButton
+  m_Name: ContinueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,20 +239,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &327008206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 327008204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db8d78716f8ffb7438ad94a2d1dde096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.SceneLoading.LoadButtonView
-  button: {fileID: 0}
-  targetScene: Game
 --- !u!114 &327008207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +343,20 @@ MonoBehaviour:
   m_LayoutPriority: 1
   m_MaxWidth: -1
   m_MaxHeight: -1
+--- !u!114 &327008211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327008204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c4039ea00ccb94abedcd493bcc8994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.SceneLoading.ContinueGameButtonView
+  button: {fileID: 0}
+  targetScene: Game
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +981,7 @@ GameObject:
   - component: {fileID: 1464009615}
   - component: {fileID: 1464009614}
   - component: {fileID: 1464009617}
-  - component: {fileID: 1464009613}
+  - component: {fileID: 1464009618}
   m_Layer: 5
   m_Name: NewGameButton
   m_TagString: Untagged
@@ -1009,20 +1009,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1464009613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464009611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db8d78716f8ffb7438ad94a2d1dde096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.SceneLoading.LoadButtonView
-  button: {fileID: 0}
-  targetScene: Game
 --- !u!114 &1464009614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,6 +1113,20 @@ MonoBehaviour:
   m_LayoutPriority: 1
   m_MaxWidth: -1
   m_MaxHeight: -1
+--- !u!114 &1464009618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464009611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd0983641ff0c8246bd39c1cdc65172c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.SceneLoading.NewGameButtonView
+  button: {fileID: 0}
+  targetScene: Game
 --- !u!1 &1590360445
 GameObject:
   m_ObjectHideFlags: 0

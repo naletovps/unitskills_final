@@ -9,7 +9,7 @@ namespace UnitSkills.Features.SceneLoading
     [RequireComponent(typeof(Image))]
     public sealed class LoadingBarView : AbstractLoadView
     {
-        [SerializeField] private Image _loadingBar;
+        [SerializeField] private Image _loadingBar = default;
 
         private void Awake()
         {

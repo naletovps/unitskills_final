@@ -8,10 +8,17 @@ namespace UnitSkills.Features.DataManagment
     /// </summary>
     public sealed class DataManager : SingletonMonoBehaviour<DataManager>
     {
+        private const string SaveKey = "GameSaveExists";
+
         /// <summary>
         /// Нужно ли загружать сохраненные данные
         /// </summary>
         public bool LoadSavedData { get; set; } = false;
+
+        /// <summary>
+        /// Существует ли сохранение игры
+        /// </summary>
+        public bool HasSave => PlayerPrefs.HasKey(SaveKey);
 
         /// <summary>
         /// Получить данные
@@ -41,6 +48,7 @@ namespace UnitSkills.Features.DataManagment
             string json = JsonUtility.ToJson(data);
 
             PlayerPrefs.SetString(key, json);
+            PlayerPrefs.SetInt(SaveKey, 1);
             PlayerPrefs.Save();
         }
     }

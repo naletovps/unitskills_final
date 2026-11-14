@@ -6,7 +6,7 @@ namespace Unitskills.Features.Facade
     /// <summary>
     /// Дата модуля фасада
     /// </summary>
-    public abstract class DataModuleFacade : ScriptableObject
+    public abstract class DataFacadeModule : ScriptableObject
     {
         /// <summary>
         /// Дата модуль инициализирован

@@ -5,7 +5,7 @@ namespace UnitSkills.Features.Input
     /// <summary>
     /// Управляет системой ввода
     /// </summary>
-    public sealed class InputSystemModule : ModuleFacade
+    public sealed class PlayerInputModule : FacadeModule
     {
         /// <summary>
         /// Текущая система ввода

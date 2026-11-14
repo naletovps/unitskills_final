@@ -22,19 +22,19 @@ namespace Unitskills.Features.Facade
         /// <summary>
         /// Список модулей фасада (контроллеры / MonoBehaviour классы)
         /// </summary>
-        public IReadOnlyList<ModuleFacade> Modules => modules;
+        public IReadOnlyList<FacadeModule> Modules => modules;
 
         /// <summary>
         /// Список моделей и дат фасада (скриптуемые объекты)
         /// </summary>
-        public IReadOnlyList<DataModuleFacade> DataModules => dataModuleFacades;
+        public IReadOnlyList<DataFacadeModule> DataModules => dataModules;
 
         /// <summary>
         /// Получить модуль по типу
         /// </summary>
         /// <typeparam name="T">Тип модуля</typeparam>
         /// <returns>Целевой модуль</returns>
-        public T GetModuleFacade<T>() where T : ModuleFacade
+        public T GetFacadeModule<T>() where T : FacadeModule
         {
             T module = (T)modules.Find(x => x is T);
 
@@ -51,23 +51,23 @@ namespace Unitskills.Features.Facade
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public List<ModuleFacade> GetModules<T>() where T : ModuleFacade => modules.FindAll(x => x is T);
+        public List<FacadeModule> GetModules<T>() where T : FacadeModule => modules.FindAll(x => x is T);
 
         /// <summary>
         /// Получить список модулей
         /// </summary>
         /// <typeparam name="G"></typeparam>
         /// <returns></returns>
-        public List<DataModuleFacade> GetDataModuleFacades<G>() where G : DataModuleFacade => dataModuleFacades.FindAll(x => x is G);
+        public List<DataFacadeModule> GetDataFacadeModules<G>() where G : DataFacadeModule => dataModules.FindAll(x => x is G);
 
         /// <summary>
         /// Получить модуль по типу
         /// </summary>
         /// <typeparam name="T">Тип модуля</typeparam>
         /// <returns>Целевой модуль</returns>
-        public G GetDataModule<G>() where G : DataModuleFacade
+        public G GetDataModule<G>() where G : DataFacadeModule
         {
-            G module = (G)dataModuleFacades.Find(x => x is G);
+            G module = (G)dataModules.Find(x => x is G);
 
             if (!module)
             {
@@ -77,20 +77,20 @@ namespace Unitskills.Features.Facade
             return module;
         }
 
-        [SerializeField] protected List<ModuleFacade> modules = new List<ModuleFacade>();
-        [SerializeField] protected List<DataModuleFacade> dataModuleFacades = new List<DataModuleFacade>();
+        [SerializeField] protected List<FacadeModule> modules = new List<FacadeModule>();
+        [SerializeField] protected List<DataFacadeModule> dataModules = new List<DataFacadeModule>();
 
         protected virtual void OnEnable()
         {
             modules.ForEach(x => x.Initialize(this));
-            dataModuleFacades.ForEach(x => x.Initialize(this));
+            dataModules.ForEach(x => x.Initialize(this));
 
             onFacadeInited.Invoke();
         }
 
         protected virtual void OnDisable()
         {
-            dataModuleFacades.ForEach(x => x.Dispose());
+            dataModules.ForEach(x => x.Dispose());
 
             onFacadeDeactivated.Invoke();
         }

@@ -6,7 +6,7 @@ namespace Unitskills.Features.Facade
     /// <summary>
     /// Функциональный модуль фасада, должен располагаться на самом фасаде или в child gameObjects
     /// </summary>
-    public abstract class ModuleFacade : MonoBehaviour
+    public abstract class FacadeModule : MonoBehaviour
     {
         /// <summary>
         /// Модуль инициализирован
@@ -27,12 +27,6 @@ namespace Unitskills.Features.Facade
             }
         }
 
-        /// <summary>
-        /// Идентификатор модуля
-        /// </summary>
-        public string Id => id;
-
-        [SerializeField] protected string id = string.Empty;
         [SerializeField] protected AbstractFacade facade = default;
 
         /// <summary>
@@ -48,7 +42,7 @@ namespace Unitskills.Features.Facade
         /// <summary>
         /// Метод срабатывающий по факту инициализации модуля фасада
         /// </summary>
-        public abstract void OnModuleInited();
+        public virtual void OnModuleInited() { }
 
         /// <summary>
         /// Метод срабатывающий по факту уничтожения модуля фасада

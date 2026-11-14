@@ -7,7 +7,7 @@ namespace UnitSkills.Features.Installer
     /// <summary>
     /// Хранит ссылку персонажа
     /// </summary>
-    [CreateAssetMenu(fileName = "NewCharacterContainer", menuName = "UnitSkills/Lesson5/Data/CharacterContainer")]
+    [CreateAssetMenu(fileName = "New Character Container", menuName = "UnitSkills/Data/CharacterContainer")]
     public sealed class CharacterContainer : ScriptableObject
     {
         /// <summary>

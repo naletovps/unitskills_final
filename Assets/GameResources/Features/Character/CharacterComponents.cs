@@ -1,6 +1,6 @@
 namespace UnitSkills.Features.Character
 {
-    using Unitskills.Features.Facade;
+    using UnitSkills.Features.Facade;
 
     /// <summary>
     /// Представление пресонажа на сцене

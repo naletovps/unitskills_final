@@ -1580,7 +1580,6 @@ GameObject:
   - component: {fileID: 795960021}
   - component: {fileID: 795960020}
   - component: {fileID: 795960022}
-  - component: {fileID: 795960023}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -1659,25 +1658,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollow
   TrackerSettings:
-    BindingMode: 3
-    PositionDamping: {x: 0, y: 0, z: 0}
+    BindingMode: 4
+    PositionDamping: {x: 1, y: 1, z: 1}
     AngularDampingMode: 0
-    RotationDamping: {x: 0, y: 0, z: 0}
+    RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
   FollowOffset: {x: 0, y: 3, z: -3}
---- !u!114 &795960023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795960019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineHardLookAt
-  LookAtOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &815668046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,6 +1676,8 @@ GameObject:
   - component: {fileID: 815668048}
   - component: {fileID: 815668049}
   - component: {fileID: 815668050}
+  - component: {fileID: 815668051}
+  - component: {fileID: 815668052}
   m_Layer: 0
   m_Name: CharacterFacade
   m_TagString: Untagged
@@ -1727,7 +1715,9 @@ MonoBehaviour:
   modules:
   - {fileID: 815668050}
   - {fileID: 121679417}
+  - {fileID: 815668052}
   - {fileID: 815668049}
+  - {fileID: 815668051}
   dataModules: []
 --- !u!114 &815668049
 MonoBehaviour:
@@ -1756,6 +1746,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Input.PlayerInputModule
   facade: {fileID: 815668048}
+--- !u!114 &815668051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815668046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4eb3255160de344daaf3313aae5a270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Character.CharacterRotationController
+  facade: {fileID: 815668048}
+--- !u!114 &815668052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815668046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9842f7429076d4429b216782d221b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Unitskills.Features.Character.RaycastController
+  facade: {fileID: 815668048}
+  cameraView: {fileID: 330585545}
+  rayDistance: 100
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3050,7 +3068,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7b2bcac43b745d44796ea4e405261089, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2105669359}
   m_SourcePrefab: {fileID: 100100000, guid: 7b2bcac43b745d44796ea4e405261089, type: 3}
 --- !u!4 &1480512743 stripped
 Transform:
@@ -4004,6 +4025,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efc83f797ccc99e4a98de34f5cc1dad7, type: 3}
   m_PrefabInstance: {fileID: 2096716076}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2105669356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7b2bcac43b745d44796ea4e405261089, type: 3}
+  m_PrefabInstance: {fileID: 1480512742}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &2105669359
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105669356}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Height: 4
+  m_Direction: 1
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-namespace Unitskills.Features.Facade
+namespace UnitSkills.Features.Facade
 {
     using System.Collections.Generic;
     using UnityEngine;

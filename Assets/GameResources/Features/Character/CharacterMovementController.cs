@@ -1,7 +1,6 @@
 namespace UnitSkills.Features.Character
 {
-    using System;
-    using Unitskills.Features.Facade;
+    using UnitSkills.Features.Facade;
     using UnitSkills.Features.Input;
     using UnityEngine;
     using UnityEngine.InputSystem;
@@ -9,7 +8,7 @@ namespace UnitSkills.Features.Character
     /// <summary>
     /// Контроллер отвечающий за перемещение игрока
     /// </summary>
-    public sealed class MovementController : FacadeModule
+    public sealed class CharacterMovementController : FacadeModule
     {
         public Vector3 CurrentVelocity => _velocity;
 

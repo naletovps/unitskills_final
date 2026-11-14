@@ -1,6 +1,6 @@
 namespace UnitSkills.Features.Input
 {
-    using Unitskills.Features.Facade;
+    using UnitSkills.Features.Facade;
 
     /// <summary>
     /// Управляет системой ввода

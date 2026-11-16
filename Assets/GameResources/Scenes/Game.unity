@@ -265,7 +265,13 @@ GameObject:
   - component: {fileID: 121679414}
   - component: {fileID: 121679415}
   - component: {fileID: 121679416}
+  - component: {fileID: 121679421}
+  - component: {fileID: 121679420}
+  - component: {fileID: 121679419}
+  - component: {fileID: 121679418}
   - component: {fileID: 121679417}
+  - component: {fileID: 121679422}
+  - component: {fileID: 121679423}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -288,6 +294,7 @@ Transform:
   m_Children:
   - {fileID: 1193103909}
   - {fileID: 958649169}
+  - {fileID: 767168145}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &121679415
@@ -349,10 +356,102 @@ MonoBehaviour:
   m_GameObject: {fileID: 121679413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c985f99495571a4aa211f1cbdf40e72, type: 3}
+  m_Script: {fileID: 11500000, guid: b9842f7429076d4429b216782d221b59, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Character.Character
-  facade: {fileID: 815668048}
+  m_EditorClassIdentifier: Assembly-CSharp::Unitskills.Features.Character.RaycastController
+  facade: {fileID: 121679421}
+  cameraView: {fileID: 330585545}
+  rayDistance: 100
+--- !u!114 &121679418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121679413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4eb3255160de344daaf3313aae5a270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Character.CharacterRotationController
+  facade: {fileID: 121679421}
+--- !u!114 &121679419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121679413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d87a889e17a624fb84f391cf158b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Input.PlayerInputModule
+  facade: {fileID: 121679421}
+--- !u!114 &121679420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121679413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a4ff928e255cf43aaa498529b25be3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Character.MovementController
+  facade: {fileID: 121679421}
+  _speed: 3
+--- !u!114 &121679421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121679413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8048b11f77b76e04aba0c8a9d68af348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Character.CharacterFacade
+  modules:
+  - {fileID: 121679419}
+  - {fileID: 121679420}
+  - {fileID: 121679418}
+  - {fileID: 121679417}
+  - {fileID: 121679422}
+  - {fileID: 121679423}
+  dataModules:
+  - {fileID: 11400000, guid: 9cad4d952ebcbc1469d9bb768a64d066, type: 2}
+--- !u!114 &121679422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121679413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57211bd2463a4e5438b53203981f971b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Shooting.ShootingController
+  facade: {fileID: 121679421}
+  cooldown: 0.4
+--- !u!114 &121679423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121679413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df41e7e1a477451428003fc475a9f57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Weapons.SnowballShooter
+  facade: {fileID: 121679421}
+  projectilePool: {fileID: 1477290966}
+  shootPoint: {fileID: 767168145}
 --- !u!1001 &141752223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -601,6 +700,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efc83f797ccc99e4a98de34f5cc1dad7, type: 3}
   m_PrefabInstance: {fileID: 227001458}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &232782734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 232782735}
+  m_Layer: 0
+  m_Name: Spawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &232782735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232782734}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1477290965}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &236256597
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,7 +741,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 236256598}
-  - component: {fileID: 236256599}
   m_Layer: 0
   m_Name: Installers
   m_TagString: Untagged
@@ -630,23 +760,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 893221299}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &236256599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236256597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99bad951e93480146b005018fc427592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Installer.CharacterInstaller
-  _characterFacade: {fileID: 815668048}
-  _container: {fileID: 11400000, guid: 158fe798a4f4b9642b2ec278ac4497ef, type: 2}
 --- !u!1001 &267746543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1093,8 +1210,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 815668047}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &378858784
@@ -1569,6 +1685,37 @@ Transform:
   - {fileID: 1412883868}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &767168144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 767168145}
+  m_Layer: 0
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &767168145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767168144}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 121679414}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &795960019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,116 +1816,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2845a5e1fbe36ad4b9e2577f11481c38, type: 3}
   m_PrefabInstance: {fileID: 1193103908}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &815668046
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 815668047}
-  - component: {fileID: 815668048}
-  - component: {fileID: 815668049}
-  - component: {fileID: 815668050}
-  - component: {fileID: 815668051}
-  - component: {fileID: 815668052}
-  m_Layer: 0
-  m_Name: CharacterFacade
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &815668047
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815668046}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 368421980}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &815668048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815668046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8048b11f77b76e04aba0c8a9d68af348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Character.CharacterFacade
-  modules:
-  - {fileID: 815668050}
-  - {fileID: 121679417}
-  - {fileID: 815668052}
-  - {fileID: 815668049}
-  - {fileID: 815668051}
-  dataModules: []
---- !u!114 &815668049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815668046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1a4ff928e255cf43aaa498529b25be3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Character.MovementController
-  facade: {fileID: 815668048}
-  _speed: 3
---- !u!114 &815668050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815668046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20d87a889e17a624fb84f391cf158b35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Input.PlayerInputModule
-  facade: {fileID: 815668048}
---- !u!114 &815668051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815668046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4eb3255160de344daaf3313aae5a270, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Character.CharacterRotationController
-  facade: {fileID: 815668048}
---- !u!114 &815668052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815668046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9842f7429076d4429b216782d221b59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Unitskills.Features.Character.RaycastController
-  facade: {fileID: 815668048}
-  cameraView: {fileID: 330585545}
-  rayDistance: 100
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,6 +2051,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efc83f797ccc99e4a98de34f5cc1dad7, type: 3}
   m_PrefabInstance: {fileID: 864249064}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &893221298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 893221299}
+  - component: {fileID: 893221300}
+  m_Layer: 0
+  m_Name: CharacterInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &893221299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893221298}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 236256598}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &893221300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893221298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99bad951e93480146b005018fc427592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Installer.CharacterInstaller
+  _characterFacade: {fileID: 121679421}
+  _container: {fileID: 11400000, guid: 158fe798a4f4b9642b2ec278ac4497ef, type: 2}
 --- !u!1 &958649168
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,7 +2716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Character.CharacterView
   container: {fileID: 11400000, guid: 158fe798a4f4b9642b2ec278ac4497ef, type: 2}
-  animator: {fileID: 0}
+  animator: {fileID: 1193103910}
 --- !u!1001 &1307226913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3060,6 +3143,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efc83f797ccc99e4a98de34f5cc1dad7, type: 3}
   m_PrefabInstance: {fileID: 1460590520}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1477290964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1477290965}
+  - component: {fileID: 1477290966}
+  m_Layer: 0
+  m_Name: PoolSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1477290965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477290964}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 232782735}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1477290966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477290964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847a81b269793f744baa927b2c91120d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Spawners.ObjectPoolSpawner
+  prefab: {fileID: 63583410891558612, guid: 715722cf991802845a3c579cd2567a29, type: 3}
+  countPrewarm: 6
 --- !u!1001 &1480512742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4113,3 +4242,4 @@ SceneRoots:
   - {fileID: 121679414}
   - {fileID: 236256598}
   - {fileID: 795960021}
+  - {fileID: 232782735}

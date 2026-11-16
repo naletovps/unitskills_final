@@ -39,6 +39,11 @@ namespace UnitSkills.Features.Spawners
 
         protected override void ReleaseItem(SpawnItem item)
         {
+            if (item == null || available.Contains(item))
+            {
+                return;
+            }
+
             item.gameObject.SetActive(false);
             item.transform.SetParent(transform);
             available.Enqueue(item);

@@ -3,61 +3,36 @@ namespace UnitSkills.Features.Physics
     using UnityEngine;
 
     /// <summary>
-    /// Триггер, который ищет на вошедшем объекте компонент заданного типа.
+    /// Ищет компонент на коллайдере или в его родителях
     /// </summary>
-    /// <typeparam name="T">Компонент, который нужно получить из коллайдера.</typeparam>
     public abstract class AbstractGenericTrigger<T> : MonoBehaviour where T : Component
     {
         protected virtual void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out T targetComponent))
-            {
-                OnTriggerEnterSuccessfully(targetComponent);
-                return;
-            }
+            T target = other.GetComponentInParent<T>();
 
-            OnTriggerEnterFail();
+            if (target != null)
+            {
+                OnTriggerEnterSuccessfully(target);
+            }
+            else
+            {
+                OnTriggerEnterFail();
+            }
         }
 
         protected virtual void OnTriggerExit(Collider other)
         {
-            if (other.TryGetComponent(out T targetComponent))
+            T target = other.GetComponentInParent<T>();
+
+            if (target != null)
             {
-                OnTriggerExitSuccessfully(targetComponent);
-                return;
+                OnTriggerExitSuccessfully(target);
             }
-
-            OnTriggerExitFail();
         }
 
-        /// <summary>
-        /// Компонент на вошедшем объекте найден.
-        /// </summary>
-        /// <param name="targetComponent">Найденный компонент.</param>
-        protected virtual void OnTriggerEnterSuccessfully(T targetComponent)
-        {
-        }
-
-        /// <summary>
-        /// На вошедшем объекте нужного компонента нет.
-        /// </summary>
-        protected virtual void OnTriggerEnterFail()
-        {
-        }
-
-        /// <summary>
-        /// Компонент на вышедшем объекте найден.
-        /// </summary>
-        /// <param name="targetComponent">Найденный компонент.</param>
-        protected virtual void OnTriggerExitSuccessfully(T targetComponent)
-        {
-        }
-
-        /// <summary>
-        /// На вышедшем объекте нужного компонента нет.
-        /// </summary>
-        protected virtual void OnTriggerExitFail()
-        {
-        }
+        protected virtual void OnTriggerEnterSuccessfully(T target) { }
+        protected virtual void OnTriggerEnterFail() { }
+        protected virtual void OnTriggerExitSuccessfully(T target) { }
     }
 }

@@ -39,12 +39,6 @@ namespace UnitSkills.Features.Facade
             }
         }
 
-        /// <summary>
-        /// Идентификатор дата модуля
-        /// </summary>
-        public string Id => id;
-
-        [SerializeField] protected string id = string.Empty;
         [SerializeField] protected AbstractFacade facade = default;
 
         /// <summary>

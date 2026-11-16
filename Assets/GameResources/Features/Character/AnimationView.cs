@@ -20,7 +20,7 @@ namespace UnitSkills.Features.Character
             {
                 animator = GetComponent<Animator>();
             }
-            
+
             movementController = container.CharacterInstance.GetFacadeModule<CharacterMovementController>();
         }
 

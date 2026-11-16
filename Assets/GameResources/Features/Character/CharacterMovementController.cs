@@ -22,7 +22,7 @@ namespace UnitSkills.Features.Character
 
         public override void OnModuleInited()
         {
-            _rigidbody = Facade.GetFacadeModule<CharacterComponents>().GetComponent<Rigidbody>();
+            _rigidbody = Facade.GetComponent<Rigidbody>();
             _moveAction = Facade.GetFacadeModule<PlayerInputModule>().PlayerInput.Gameplay.Move;
 
             _moveAction.performed += OnMovePerformed;

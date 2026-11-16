@@ -15,7 +15,7 @@ namespace UnitSkills.Features.Character
 
         public override void OnModuleInited()
         {
-            _rigidbody = Facade.GetFacadeModule<CharacterComponents>().GetComponent<Rigidbody>();
+            _rigidbody = Facade.GetComponent<Rigidbody>();
             _raycast = Facade.GetFacadeModule<RaycastController>();
         }
 

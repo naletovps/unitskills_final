@@ -22,7 +22,7 @@ namespace UnitSkills.Features.Shooting
 
         public override void OnModuleInited()
         {
-            modelAmmo = Facade.GetDataModule<AmmoModel>();
+            modelAmmo = Facade.GetDataFacadeModule<AmmoModel>();
             shootAction = Facade.GetFacadeModule<PlayerInputModule>().PlayerInput.Gameplay.Shoot;
 
             shootAction.performed += OnShootPerformed;

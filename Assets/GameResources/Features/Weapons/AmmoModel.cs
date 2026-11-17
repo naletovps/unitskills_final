@@ -41,14 +41,16 @@ namespace UnitSkills.Features.Shooting
             }
         }
 
-        private const string SaveKey = "AmmoModel";
+        /// <summary>
+        /// Вместимость оружия
+        /// </summary>
+        public int Capacity => capacity;
 
         [SerializeField, Min(0)] protected int ammoCount = default;
-        [SerializeField, Min(0)] protected int originCount = 6;
+        [SerializeField, Min(0)] protected int capacity = 6;
 
-        /// <summary>
-        /// Загружает количество патронов
-        /// </summary>
+        private const string SaveKey = "AmmoModel";
+
         public override void OnModuleInited()
         {
             if (DataManager.Instance == null)
@@ -59,15 +61,12 @@ namespace UnitSkills.Features.Shooting
             AmmoSaveData data = DataManager.Instance.GetData(SaveKey,   
                 new AmmoSaveData 
                 {
-                    ammoCount = originCount 
+                    ammoCount = Capacity
                 });
 
             AmmoCount = data.ammoCount;
         }
 
-        /// <summary>
-        /// Сохраняет количество патронов
-        /// </summary>
         public override void OnModuleDisposed()
         {
             if (DataManager.Instance == null)
@@ -86,9 +85,6 @@ namespace UnitSkills.Features.Shooting
         /// <summary>
         /// Восстанавливает начальное количество патронов
         /// </summary>
-        public void ResetAmmo()
-        {
-            AmmoCount = originCount;
-        }
+        public void ResetAmmo() => AmmoCount = Capacity;
     }
 }

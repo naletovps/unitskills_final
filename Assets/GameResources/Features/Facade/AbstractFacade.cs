@@ -65,7 +65,7 @@ namespace UnitSkills.Features.Facade
         /// </summary>
         /// <typeparam name="T">Тип модуля</typeparam>
         /// <returns>Целевой модуль</returns>
-        public G GetDataModule<G>() where G : DataFacadeModule
+        public G GetDataFacadeModule<G>() where G : DataFacadeModule
         {
             G module = (G)dataModules.Find(x => x is G);
 

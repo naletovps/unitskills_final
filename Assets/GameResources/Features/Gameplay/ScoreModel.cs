@@ -3,10 +3,12 @@ namespace UnitSkills.Features.Gameplay
     using System;
     using UnitSkills.Features.DataManagment;
     using UnitSkills.Features.Facade;
+    using UnityEngine;
 
     /// <summary>
     /// Очки текущей сессии и постоянный рекорд
     /// </summary>
+    [CreateAssetMenu(fileName = "New Score Model", menuName = "UnitSkills/Data/Score")]
     public class ScoreModel : DataFacadeModule
     {
         /// <summary>

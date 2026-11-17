@@ -225,6 +225,8 @@ MonoBehaviour:
   - {fileID: 2593536520607065803}
   dataModules:
   - {fileID: 11400000, guid: 9cad4d952ebcbc1469d9bb768a64d066, type: 2}
+  - {fileID: 11400000, guid: 5d5552feb1573d740b0b6fa18d6c985f, type: 2}
+  - {fileID: 11400000, guid: b50ebbd08c2910646a9b31ab4adfbe5d, type: 2}
 --- !u!114 &4587973517126954869
 MonoBehaviour:
   m_ObjectHideFlags: 0

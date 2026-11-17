@@ -90,6 +90,7 @@ namespace UnitSkills.Features.Facade
 
         protected virtual void OnDisable()
         {
+            modules.ForEach(x => x.OnModuleDisposed());
             dataModules.ForEach(x => x.Dispose());
 
             onFacadeDeactivated.Invoke();

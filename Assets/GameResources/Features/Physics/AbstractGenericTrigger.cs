@@ -5,7 +5,7 @@ namespace UnitSkills.Features.Physics
     /// <summary>
     /// Ищет компонент на коллайдере или в его родителях
     /// </summary>
-    public abstract class AbstractGenericTrigger<T> : MonoBehaviour where T : Component
+    public abstract class AbstractGenericTrigger<T> : MonoBehaviour
     {
         protected virtual void OnTriggerEnter(Collider other)
         {

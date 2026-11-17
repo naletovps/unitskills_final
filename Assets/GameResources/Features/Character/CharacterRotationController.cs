@@ -1,6 +1,7 @@
 namespace UnitSkills.Features.Character
 {
     using UnitSkills.Features.Facade;
+    using UnitSkills.Features.Physics;
     using UnityEngine;
 
     /// <summary>

@@ -11,14 +11,14 @@ namespace UnitSkills.Features.Resources
         [SerializeField, Min(0)] protected int amount = 10;
         protected ScoreModel scoreModel = default;
 
-        public override bool TryPickup(PlayerPickupReceiver receiver)
+        public override bool TryPickup(IPickupableFacade facade)
         {
-            if (receiver.PlayerFacade == null)
+            if (facade == null)
             {
                 return false;
             }
 
-            scoreModel = receiver.PlayerFacade.GetDataFacadeModule<ScoreModel>();
+            scoreModel = facade.GetDataFacadeModule<ScoreModel>();
             scoreModel.Add(amount);
 
             return true;

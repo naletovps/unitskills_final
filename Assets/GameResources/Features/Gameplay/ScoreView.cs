@@ -7,7 +7,7 @@ namespace UnitSkills.Features.Gameplay
     /// <summary>
     /// Отображение счета
     /// </summary>
-    public class ScoreView : CharacterProvider
+    public class ScoreView : FacadeProvider
     {
         [SerializeField] protected Text scoreText;
         protected ScoreModel scoreModel;
@@ -19,7 +19,7 @@ namespace UnitSkills.Features.Gameplay
                 scoreText = GetComponent<Text>();
             }
 
-            scoreModel = container.CharacterInstance.GetDataFacadeModule<ScoreModel>();
+            scoreModel = container.FacadeInstance.GetDataFacadeModule<ScoreModel>();
             scoreModel.onScoreChanged += OnScoreChanged;
             OnScoreChanged();
         }

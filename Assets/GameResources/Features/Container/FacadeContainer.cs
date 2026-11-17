@@ -1,14 +1,14 @@
 namespace UnitSkills.Features.Installer
 {
     using System;
-    using UnitSkills.Features.Character;
+    using UnitSkills.Features.Facade;
     using UnityEngine;
 
     /// <summary>
     /// Хранит ссылку персонажа
     /// </summary>
     [CreateAssetMenu(fileName = "New Character Container", menuName = "UnitSkills/Data/CharacterContainer")]
-    public sealed class CharacterContainer : ScriptableObject
+    public sealed class FacadeContainer : ScriptableObject
     {
         /// <summary>
         /// Вызывается при инициализации персонажа
@@ -23,7 +23,7 @@ namespace UnitSkills.Features.Installer
         /// <summary>
         /// Текущий экземпляр персонажа
         /// </summary>
-        public CharacterFacade CharacterInstance
+        public AbstractFacade FacadeInstance
         {
             get => _characterInstance;
             set
@@ -43,6 +43,6 @@ namespace UnitSkills.Features.Installer
             }
         }
 
-        [SerializeField] private CharacterFacade _characterInstance = default;
+        [SerializeField] private AbstractFacade _characterInstance = default;
     }
 }

@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 4132031848026450994}
   - component: {fileID: 5549197398378063474}
   - component: {fileID: 63583410891558612}
-  m_Layer: 0
+  - component: {fileID: 2131628038385835932}
+  m_Layer: 12
   m_Name: Snowball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,6 +112,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Spawners.TimedSpawnItem
   lifetime: 4
+--- !u!114 &2131628038385835932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824107336284415508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c23221961efaa824cb2f6817e13233fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Weapons.ProjectileDamageTrigger
+  damage: 1
 --- !u!1001 &8551375066373061039
 PrefabInstance:
   m_ObjectHideFlags: 0

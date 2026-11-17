@@ -126,8 +126,8 @@ GameObject:
   - component: {fileID: 7159504722438349303}
   - component: {fileID: 4026903330905399492}
   - component: {fileID: 5281986780339771130}
-  - component: {fileID: 2593536520607065803}
-  m_Layer: 0
+  - component: {fileID: -4540699650557065687}
+  m_Layer: 10
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ MonoBehaviour:
   - {fileID: 7159504722438349303}
   - {fileID: 4026903330905399492}
   - {fileID: 5281986780339771130}
-  - {fileID: 2593536520607065803}
+  - {fileID: -4540699650557065687}
   dataModules:
   - {fileID: 11400000, guid: 9cad4d952ebcbc1469d9bb768a64d066, type: 2}
   - {fileID: 11400000, guid: 5d5552feb1573d740b0b6fa18d6c985f, type: 2}
@@ -311,7 +311,7 @@ MonoBehaviour:
   facade: {fileID: 7624679548138580428}
   projectilePool: {fileID: 5642908995821222047}
   shootPoint: {fileID: 3622502012265020383}
---- !u!114 &2593536520607065803
+--- !u!114 &-4540699650557065687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -320,9 +320,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8121018187577956843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3deb3d7687f58408e28d26f27b6665, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d4abb9d5f795d14d8875ffaca561541, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Resources.PlayerPickupReceiver
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.Combat.HealthController
   facade: {fileID: 7624679548138580428}
 --- !u!1001 &8419272674638566869
 PrefabInstance:

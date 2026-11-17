@@ -4,18 +4,18 @@ namespace UnitSkills.Features.Combat
     using UnityEngine;
     using UnityEngine.UI;
 
-    public class PlayerHealthView : CharacterProvider
+    public class PlayerHealthView : FacadeProvider
     {
         [SerializeField] protected Image fillImage = default;
         protected HealthModel healthModel;
 
         protected override void OnFacadeInited()
         {
-            healthModel = container.CharacterInstance.GetDataFacadeModule<HealthModel>();
+            healthModel = container.FacadeInstance.GetDataFacadeModule<HealthModel>();
             healthModel.onHealthChanged += OnHealthChanged;
             OnHealthChanged();
         }
 
-        private void OnHealthChanged() => fillImage.fillAmount = healthModel.Current / healthModel.Max;
+        private void OnHealthChanged() => fillImage.fillAmount = (float)healthModel.Current / healthModel.Max;
     }
 }

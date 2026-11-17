@@ -9,14 +9,14 @@ namespace UnitSkills.Features.Resources
     {
         protected AmmoModel ammoModel = default;
 
-        public override bool TryPickup(PlayerPickupReceiver receiver)
+        public override bool TryPickup(IPickupableFacade facade)
         {
-            if (receiver.PlayerFacade == null)
+            if (facade == null)
             {
                 return false;
             }
 
-            ammoModel = receiver.PlayerFacade.GetDataFacadeModule<AmmoModel>();
+            ammoModel = facade.GetDataFacadeModule<AmmoModel>();
 
             if (ammoModel.AmmoCount >= ammoModel.Capacity)
             {

@@ -357,6 +357,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitSkills.Features.SceneLoading.ContinueGameButtonView
   button: {fileID: 0}
   targetScene: Game
+  text: {fileID: 0}
+  inactiveColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0

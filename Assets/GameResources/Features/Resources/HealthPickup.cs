@@ -11,14 +11,14 @@ namespace UnitSkills.Features.Resources
         [SerializeField, Min(0)] protected int amount = 10;
         protected HealthModel healthModel = default;
 
-        public override bool TryPickup(PlayerPickupReceiver receiver)
+        public override bool TryPickup(IPickupableFacade facade)
         {
-            if (receiver.PlayerFacade == null)
+            if (facade == null)
             {
                 return false;
             }
 
-            healthModel = receiver.PlayerFacade.GetDataFacadeModule<HealthModel>();
+            healthModel = facade.GetDataFacadeModule<HealthModel>();
 
             if (healthModel.Current >= healthModel.Max)
             {

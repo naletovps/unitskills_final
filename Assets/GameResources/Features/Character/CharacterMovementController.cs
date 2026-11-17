@@ -1,16 +1,16 @@
 namespace UnitSkills.Features.Character
 {
-    using UnitSkills.Features.Facade;
     using UnitSkills.Features.Input;
+    using UnitSkills.Features.Physics;
     using UnityEngine;
     using UnityEngine.InputSystem;
 
     /// <summary>
     /// Контроллер отвечающий за перемещение игрока
     /// </summary>
-    public sealed class CharacterMovementController : FacadeModule
+    public sealed class CharacterMovementController : AbstractMovementController
     {
-        public Vector3 CurrentVelocity => _velocity;
+        public override Vector3 CurrentVelocity => _velocity;
 
         [SerializeField] private float _speed = 5f;
 

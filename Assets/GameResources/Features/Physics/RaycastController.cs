@@ -1,4 +1,4 @@
-namespace UnitSkills.Features.Character
+namespace UnitSkills.Features.Physics
 {
     using UnitSkills.Features.Facade;
     using UnitSkills.Features.Input;

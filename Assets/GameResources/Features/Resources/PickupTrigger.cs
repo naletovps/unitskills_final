@@ -7,7 +7,7 @@ namespace UnitSkills.Features.Resources
     /// Триггер на ресурсе
     /// </summary>
     [RequireComponent(typeof(PickupItem))]
-    public class PickupTrigger : AbstractGenericTrigger<PlayerPickupReceiver>
+    public class PickupTrigger : AbstractGenericTrigger<IPickupableFacade>
     {
         [SerializeField] protected PickupItem item;
 
@@ -19,7 +19,7 @@ namespace UnitSkills.Features.Resources
             }
         }
 
-        protected override void OnTriggerEnterSuccessfully(PlayerPickupReceiver receiver)
+        protected override void OnTriggerEnterSuccessfully(IPickupableFacade receiver)
         {
             if (item.TryPickup(receiver))
             {

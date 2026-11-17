@@ -10,6 +10,6 @@ namespace UnitSkills.Features.Resources
         /// <summary>
         /// Пытаемся поднять предмет
         /// </summary>
-        public abstract bool TryPickup(PlayerPickupReceiver receiver);
+        public abstract bool TryPickup(IPickupableFacade receiver);
     }
 }

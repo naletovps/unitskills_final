@@ -5,16 +5,16 @@
     /// <summary>
     /// Базовый класс для компонентов, использующих фасад персонажа
     /// </summary>
-    public abstract class CharacterProvider : MonoBehaviour
+    public abstract class FacadeProvider : MonoBehaviour
     {
-        [SerializeField] protected CharacterContainer container = default;
+        [SerializeField] protected FacadeContainer container = default;
 
         protected virtual void OnEnable()
         {
             container.onCharacterInited += OnFacadeInited;
             container.onCharacterDisposed += OnFacadeDisposed;
 
-            if (container.CharacterInstance != null)
+            if (container.FacadeInstance != null)
             {
                 OnFacadeInited();
             }

@@ -8,7 +8,7 @@ namespace UnitSkills.Features.Weapons
     /// <summary>
     /// Отображение количество снарядов
     /// </summary>
-    public class AmmoView : CharacterProvider
+    public class AmmoView : FacadeProvider
     {
         [SerializeField] protected Text ammoText;
         protected AmmoModel ammoModel;
@@ -20,7 +20,7 @@ namespace UnitSkills.Features.Weapons
                 ammoText = GetComponent<Text>();
             }
 
-            ammoModel = container.CharacterInstance.GetDataFacadeModule<AmmoModel>();
+            ammoModel = container.FacadeInstance.GetDataFacadeModule<AmmoModel>();
             ammoModel.onAmmoCountChanged += OnScoreChanged;
             OnScoreChanged();
         }
